@@ -45,11 +45,37 @@ async function getUser(req, res) {
 }
 
 async function updateUser(req, res) {
-  // TODO implement this
+  try {
+    const user = await User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $set: req.body },
+      { runValidators: true, new: true }
+    );
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ message: 'No user with that ID found' });
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
 }
 
 async function deleteUser(req, res) {
-  // TODO implement this too
+  try {
+    const user = await User.findOneAndDelete({ _id: req.params.userId });
+    if (user) {
+      // Delete user's associated thoughts
+      Thought.deleteMany({ _id: { $in: user.thoughts } })
+      res.json({ message: 'User successfully deleted' });
+    } else {
+      res.status(404).json({ message: 'No user with that ID found' });
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
 }
 
 // TODO add remaining controller methods

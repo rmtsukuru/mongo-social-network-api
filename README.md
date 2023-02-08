@@ -13,12 +13,12 @@
 - GET     (fetch all users)
 - POST    (create a user)
 
-**Routes remaining to be implemented**:
-
 `/api/users/:id`
 - GET     (fetch a user by ID)
 - PUT     (update a user by ID)
 - DELETE  (delete a user by ID)
+
+**Routes remaining to be implemented**:
 
 `/api/users/:id/friends/:friendId`
 - POST    (add a friend to user's friend list)
