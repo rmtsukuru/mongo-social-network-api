@@ -40,4 +40,4 @@ See [REQUIREMENTS.md](/REQUIREMENTS.md) for more information.
 - DELETE  (delete a reaction from a thought by its reactionId*)
     reactionId is stored in request body
 
-See notes.txt for more details.
+See [notes.txt](/notes.txt) for more details.
