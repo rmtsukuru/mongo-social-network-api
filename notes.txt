@@ -1,0 +1,44 @@
+Homework 18 Notes
+Requirements:
+- Social Media API
+- Express app with Mongo database using Mongoose
+- Date parsing library?
+- No seed data required
+
+Models:
+- Users (has list of friends, user model self-reference)
+- Thoughts (belong to users)
+* Reactions (belong to thoughts, schema only)
+
+Routes:
+
+Users
+
+/api/users
+- GET     (fetch all users)
+- POST    (create a user)
+
+/api/users/:id
+- GET     (fetch a user by ID)
+- PUT     (update a user by ID)
+- DELETE  (delete a user by ID)
+
+/api/users/:id/friends/:friendId
+- POST    (add a friend to user's friend list)
+- DELETE  (delete a friend from user's friend list)
+
+Thoughts
+
+/api/thoughts
+- GET     (fetch all thoughts)
+- POST    (create a thought, including to attached user)
+
+/api/thoughts/:id
+- GET     (fetch a thought by ID)
+- PUT     (update a thought by ID)
+- DELETE  (delete a thought by ID)
+
+/api/thoughts/:id/reactions
+- POST    (add a reaction to a thought)
+- DELETE  (delete a reaction from a thought by its reactionId*)
+             * reactionId is stored in request body
