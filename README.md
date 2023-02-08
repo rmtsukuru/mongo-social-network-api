@@ -1,4 +1,6 @@
-## README ##
+## MongoDB User Data Management Server ##
+
+See [REQUIREMENTS.md](/REQUIREMENTS.md) for more information.
 
 **How to run**:
 
