@@ -4,6 +4,8 @@ See [REQUIREMENTS.md](/REQUIREMENTS.md) for more information.
 
 **How to run**:
 
+(Requires MongoDB server to be installed and running; if not already installed, see [here](https://www.mongodb.com/docs/manual/installation/) for details).
+
 1. Run `npm i`
 2. Run `npm run seed`
 2. Run `npm start`
